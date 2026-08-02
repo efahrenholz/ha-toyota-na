@@ -148,12 +148,12 @@ async def get_telemetry(self, vin, region="US", generation="17CYPLUS"):
 async def _auth_headers(self):
     return {
         "AUTHORIZATION": "Bearer " + await self.auth.get_access_token(),
-        "X-API-KEY": self.API_KEY,
+        "X-API-KEY": RESOLVER_API_KEY,
         "X-GUID": await self.auth.get_guid(),
         "X-CHANNEL": "ONEAPP",
         "X-BRAND": "T",
         "x-region": "US",
-        "X-APPVERSION": "3.1.0",
+        "X-APPVERSION": "3.4.0",
         "X-LOCALE": "en-US",
         "User-Agent": USER_AGENT,
         "Accept": "application/json",
@@ -293,7 +293,7 @@ async def graphql_request(
         "x-deviceid": self.auth.get_device_id(),
         "X-APPBRAND": "T",
         "x-channel": "ONEAPP",
-        "X-APPVERSION": "3.1.0",
+        "X-APPVERSION": "3.4.0",
         "X-OSNAME": "Android",
         "X-OSVERSION": "14",
         "X-LOCALE": "en-US",
